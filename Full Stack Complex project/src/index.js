@@ -1,4 +1,4 @@
-// require('dotenv').config({path:'./env'})  //this is the first way we can do but its not an right practice to change our way
+// require('dotenv').config({path:'./env'})  //this is the first way we can do but its not an right practice to change our path
 
 import dotenv from "dotenv";
 import connectDB from "./db/db_index.js";
@@ -10,12 +10,12 @@ dotenv.config({
 connectDB()
   .then(()=>{
     app.listen(process.env.PORT || 8000,(req,res)=>{
-      console.log(`Server in running at ${process.env.PORT}`);
+      console.log(`Server in running at port: ${process.env.PORT}`);
     })
   })
   .catch((err) => {
     console.log("MogoDB connection failed !!!", err);
-  });
+  }); F
 
 
 
